@@ -58,7 +58,7 @@ function Form({ props }) {
                             /\s/.test(trimmedPassword) ? "Password must not contain spaces" :
                                 ""
                 );
-                break;                
+                break;
             case "confirm-password":
                 setConfirmPassword(value);
                 setErrConfirmPassword(
@@ -67,7 +67,7 @@ function Form({ props }) {
                             /\s/.test(value) ? "Password must not contain spaces" :
                                 ""
                 );
-                break;                
+                break;
             default:
                 break;
         }
@@ -104,40 +104,6 @@ function Form({ props }) {
                     )}
 
                     <form onSubmit={handleSubmit} className="space-y-6">
-                        <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-200">
-                                Email
-                            </label>
-                            <div className="mt-1 relative">
-                                <input
-                                    id="email"
-                                    type="email"
-                                    value={email}
-                                    onChange={handleInputChange}
-                                    className="w-full px-4 py-3 bg-white/5 border border-gray-500/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all duration-300"
-                                    placeholder="Enter your email"
-                                />
-                            </div>
-                            {errEmail && <p className="text-red-400 text-xs mt-1">{errEmail}</p>}
-                        </div>
-
-                        <div>
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-200">
-                                Password
-                            </label>
-                            <div className="mt-1 relative">
-                                <input
-                                    id="password"
-                                    type="password"
-                                    value={password}
-                                    onChange={handleInputChange}
-                                    className="w-full px-4 py-3 bg-white/5 border border-gray-500/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all duration-300"
-                                    placeholder="Enter your password"
-                                />
-                            </div>
-                            {errPassword && <p className="text-red-400 text-xs mt-1">{errPassword}</p>}
-                        </div>
-
                         {!isLogin && (
                             <>
                                 <div>
@@ -173,24 +139,60 @@ function Form({ props }) {
                                     </div>
                                     {errUsername && <p className="text-red-400 text-xs mt-1">{errUsername}</p>}
                                 </div>
-
-                                <div>
-                                    <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-200">
-                                        Confirm Password
-                                    </label>
-                                    <div className="mt-1 relative">
-                                        <input
-                                            id="confirm-password"
-                                            type="password"
-                                            value={confirmPassword}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 bg-white/5 border border-gray-500/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all duration-300"
-                                            placeholder="Confirm your password"
-                                        />
-                                    </div>
-                                    {errConfirmPassword && <p className="text-red-400 text-xs mt-1">{errConfirmPassword}</p>}
-                                </div>
                             </>
+                        )}
+
+                        <div>
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-200">
+                                Email
+                            </label>
+                            <div className="mt-1 relative">
+                                <input
+                                    id="email"
+                                    type="email"
+                                    value={email}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 bg-white/5 border border-gray-500/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all duration-300"
+                                    placeholder="Enter your email"
+                                />
+                            </div>
+                            {errEmail && <p className="text-red-400 text-xs mt-1">{errEmail}</p>}
+                        </div>
+
+                        <div>
+                            <label htmlFor="password" className="block text-sm font-medium text-gray-200">
+                                Password
+                            </label>
+                            <div className="mt-1 relative">
+                                <input
+                                    id="password"
+                                    type="password"
+                                    value={password}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 bg-white/5 border border-gray-500/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all duration-300"
+                                    placeholder="Enter your password"
+                                />
+                            </div>
+                            {errPassword && <p className="text-red-400 text-xs mt-1">{errPassword}</p>}
+                        </div>
+
+                        {!isLogin && (
+                            <div>
+                                <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-200">
+                                    Confirm Password
+                                </label>
+                                <div className="mt-1 relative">
+                                    <input
+                                        id="confirm-password"
+                                        type="password"
+                                        value={confirmPassword}
+                                        onChange={handleInputChange}
+                                        className="w-full px-4 py-3 bg-white/5 border border-gray-500/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all duration-300"
+                                        placeholder="Confirm your password"
+                                    />
+                                </div>
+                                {errConfirmPassword && <p className="text-red-400 text-xs mt-1">{errConfirmPassword}</p>}
+                            </div>
                         )}
 
                         <div className="flex items-center justify-center">
